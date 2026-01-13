@@ -1,6 +1,7 @@
 import { ShoppingCart, Search, User, Menu, Heart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -10,37 +11,37 @@ const Header = () => {
       <div className="container flex h-16 items-center justify-between px-4 md:px-6">
         {/* Logo */}
         <div className="flex items-center gap-8">
-          <a href="/" className="flex items-center gap-2">
+          <Link to="/" className="flex items-center gap-2">
             <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary">
               <span className="text-lg font-bold text-primary-foreground">P</span>
             </div>
             <span className="hidden text-xl font-semibold tracking-tight text-foreground sm:block">
               Purera
             </span>
-          </a>
+          </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-6">
-            <a href="#" className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary">
+            <Link to="/new-arrivals" className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary">
               New Arrivals
-            </a>
-            <a href="#" className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary">
+            </Link>
+            <Link to="/new-arrivals" className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary">
               Skincare
-            </a>
-            <a href="#" className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary">
+            </Link>
+            <Link to="/new-arrivals" className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary">
               Body Care
-            </a>
-            <a href="#" className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary">
+            </Link>
+            <Link to="/new-arrivals" className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary">
               Wellness
-            </a>
-            <a href="#" className="flex items-center gap-1 text-sm font-medium text-secondary transition-colors hover:text-secondary/80">
+            </Link>
+            <Link to="/sale" className="flex items-center gap-1 text-sm font-medium text-secondary transition-colors hover:text-secondary/80">
               <span className="relative">
                 Sale
                 <span className="absolute -right-3 -top-1 flex h-4 w-4 items-center justify-center rounded-full bg-accent text-[10px] font-bold text-accent-foreground">
                   %
                 </span>
               </span>
-            </a>
+            </Link>
           </nav>
         </div>
 
@@ -62,20 +63,26 @@ const Header = () => {
             <Search className="h-5 w-5" />
           </Button>
 
-          <Button variant="ghost" size="icon" className="hidden sm:flex">
-            <Heart className="h-5 w-5" />
-          </Button>
+          <Link to="/wishlist">
+            <Button variant="ghost" size="icon" className="hidden sm:flex">
+              <Heart className="h-5 w-5" />
+            </Button>
+          </Link>
 
-          <Button variant="ghost" size="icon">
-            <User className="h-5 w-5" />
-          </Button>
+          <Link to="/profile">
+            <Button variant="ghost" size="icon">
+              <User className="h-5 w-5" />
+            </Button>
+          </Link>
 
-          <Button variant="ghost" size="icon" className="relative">
-            <ShoppingCart className="h-5 w-5" />
-            <span className="absolute -right-0.5 -top-0.5 flex h-4 w-4 items-center justify-center rounded-full bg-accent text-[10px] font-bold text-accent-foreground">
-              2
-            </span>
-          </Button>
+          <Link to="/cart">
+            <Button variant="ghost" size="icon" className="relative">
+              <ShoppingCart className="h-5 w-5" />
+              <span className="absolute -right-0.5 -top-0.5 flex h-4 w-4 items-center justify-center rounded-full bg-accent text-[10px] font-bold text-accent-foreground">
+                2
+              </span>
+            </Button>
+          </Link>
 
           <Button
             variant="ghost"
@@ -92,21 +99,21 @@ const Header = () => {
       {isMenuOpen && (
         <div className="lg:hidden border-t border-border animate-fade-in">
           <nav className="container flex flex-col gap-2 px-4 py-4">
-            <a href="#" className="rounded-lg px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-muted">
+            <Link to="/new-arrivals" className="rounded-lg px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-muted" onClick={() => setIsMenuOpen(false)}>
               New Arrivals
-            </a>
-            <a href="#" className="rounded-lg px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-muted">
+            </Link>
+            <Link to="/new-arrivals" className="rounded-lg px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-muted" onClick={() => setIsMenuOpen(false)}>
               Skincare
-            </a>
-            <a href="#" className="rounded-lg px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-muted">
+            </Link>
+            <Link to="/new-arrivals" className="rounded-lg px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-muted" onClick={() => setIsMenuOpen(false)}>
               Body Care
-            </a>
-            <a href="#" className="rounded-lg px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-muted">
+            </Link>
+            <Link to="/new-arrivals" className="rounded-lg px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-muted" onClick={() => setIsMenuOpen(false)}>
               Wellness
-            </a>
-            <a href="#" className="rounded-lg px-4 py-2 text-sm font-medium text-secondary transition-colors hover:bg-secondary-light">
+            </Link>
+            <Link to="/sale" className="rounded-lg px-4 py-2 text-sm font-medium text-secondary transition-colors hover:bg-secondary-light" onClick={() => setIsMenuOpen(false)}>
               Sale
-            </a>
+            </Link>
           </nav>
         </div>
       )}
