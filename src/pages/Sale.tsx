@@ -7,6 +7,7 @@ import product1 from "@/assets/product-1.jpg";
 import product2 from "@/assets/product-2.jpg";
 import product3 from "@/assets/product-3.jpg";
 import product4 from "@/assets/product-4.jpg";
+import card3 from "@/assets/card3.png";
 
 const saleProducts = [
   {
@@ -155,18 +156,22 @@ const Sale = () => {
       <Header />
       
       {/* Hero Section */}
-      <section className="relative overflow-hidden gradient-gold py-16 md:py-24">
-        <div className="absolute inset-0 bg-black/10" />
-        <div className="container relative px-4 md:px-6">
-          <div className="text-center">
-            <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-background/90 px-4 py-2 text-sm font-medium text-foreground">
+      <section className="relative overflow-hidden min-h-[70vh] md:min-h-[80vh] flex items-center">
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: `url(${card3})` }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/50" />
+        <div className="container relative z-10 px-4 md:px-6 py-16 md:py-24">
+          <div className="text-center max-w-3xl mx-auto">
+            <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-white/95 backdrop-blur-sm px-5 py-2.5 text-sm font-semibold text-foreground shadow-xl">
               <Percent className="h-4 w-4 text-accent" />
               Limited Time Only
             </div>
-            <h1 className="text-4xl font-bold tracking-tight text-foreground md:text-5xl lg:text-6xl mb-4">
+            <h1 className="text-5xl font-bold tracking-tight text-white md:text-6xl lg:text-7xl mb-6 drop-shadow-2xl">
               Seasonal Sale
             </h1>
-            <p className="mx-auto max-w-2xl text-lg text-foreground/80">
+            <p className="mx-auto max-w-2xl text-xl text-white/95 font-medium drop-shadow-lg leading-relaxed">
               Up to 30% off on select premium products. Don't miss these incredible deals on your favorite skincare essentials.
             </p>
           </div>

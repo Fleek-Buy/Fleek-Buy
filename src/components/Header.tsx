@@ -2,6 +2,7 @@ import { ShoppingCart, Search, User, Menu, Heart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import logo from "/Logo.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -12,11 +13,9 @@ const Header = () => {
         {/* Logo */}
         <div className="flex items-center gap-8">
           <Link to="/" className="flex items-center gap-2">
-            <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary">
-              <span className="text-lg font-bold text-primary-foreground">P</span>
-            </div>
+            <img src={logo} alt="Fleek Buy" className="h-9 w-9" />
             <span className="hidden text-xl font-semibold tracking-tight text-foreground sm:block">
-              Purera
+              Fleek Buy
             </span>
           </Link>
 
@@ -25,15 +24,6 @@ const Header = () => {
             <Link to="/new-arrivals" className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary">
               New Arrivals
             </Link>
-            <Link to="/new-arrivals" className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary">
-              Skincare
-            </Link>
-            <Link to="/new-arrivals" className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary">
-              Body Care
-            </Link>
-            <Link to="/new-arrivals" className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary">
-              Wellness
-            </Link>
             <Link to="/sale" className="flex items-center gap-1 text-sm font-medium text-secondary transition-colors hover:text-secondary/80">
               <span className="relative">
                 Sale
@@ -41,6 +31,9 @@ const Header = () => {
                   %
                 </span>
               </span>
+            </Link>
+            <Link to="/products" className="flex items-center gap-1 text-sm font-medium text-secondary transition-colors hover:text-secondary/80">
+              All Products
             </Link>
           </nav>
         </div>
@@ -101,15 +94,6 @@ const Header = () => {
           <nav className="container flex flex-col gap-2 px-4 py-4">
             <Link to="/new-arrivals" className="rounded-lg px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-muted" onClick={() => setIsMenuOpen(false)}>
               New Arrivals
-            </Link>
-            <Link to="/new-arrivals" className="rounded-lg px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-muted" onClick={() => setIsMenuOpen(false)}>
-              Skincare
-            </Link>
-            <Link to="/new-arrivals" className="rounded-lg px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-muted" onClick={() => setIsMenuOpen(false)}>
-              Body Care
-            </Link>
-            <Link to="/new-arrivals" className="rounded-lg px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-muted" onClick={() => setIsMenuOpen(false)}>
-              Wellness
             </Link>
             <Link to="/sale" className="rounded-lg px-4 py-2 text-sm font-medium text-secondary transition-colors hover:bg-secondary-light" onClick={() => setIsMenuOpen(false)}>
               Sale
