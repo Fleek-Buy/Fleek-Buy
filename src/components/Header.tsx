@@ -2,7 +2,7 @@ import { ShoppingCart, Search, User, Menu, Heart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import logo from "/Logo.png";
+import logo from "/FullLogo.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -13,10 +13,7 @@ const Header = () => {
         {/* Logo */}
         <div className="flex items-center gap-8">
           <Link to="/" className="flex items-center gap-2">
-            <img src={logo} alt="Fleek Buy" className="h-9 w-9" />
-            <span className="hidden text-xl font-semibold tracking-tight text-foreground sm:block">
-              Fleek Buy
-            </span>
+            <img src={logo} alt="Fleek Buy" className="h-12 w-28" />
           </Link>
 
           {/* Desktop Navigation */}

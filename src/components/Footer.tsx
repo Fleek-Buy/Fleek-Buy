@@ -7,7 +7,7 @@ import {
   Phone,
   Mail,
 } from "lucide-react";
-import logo from "/Logo.png";
+import logo from "/FullLogo.png";
 
 const footerLinks = {
   shop: [
@@ -67,10 +67,7 @@ const Footer = () => {
           {/* Brand Column */}
           <div className="lg:col-span-2">
             <div className="flex items-center gap-2 mb-4">
-              <img src={logo} alt="Fleek Buy" className="h-9 w-9" />
-              <span className="text-2xl font-semibold tracking-tight">
-                Fleek Buy
-              </span>
+              <img src={logo} alt="Fleek Buy" className="h-[70px] w-[200px]" />
             </div>
             <p className="mb-6 max-w-sm text-primary-foreground/70">
               Crafting premium organic skincare that honors both your skin and
