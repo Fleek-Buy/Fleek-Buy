@@ -2,7 +2,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Heart, ShoppingCart, Star, Leaf, Minus, Plus, Truck, RotateCcw, Shield, Check, ChevronRight } from "lucide-react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import product1 from "@/assets/product-1.jpg";
 import product2 from "@/assets/product-2.jpg";
@@ -43,13 +43,18 @@ const relatedProducts = [
 
 const ProductDetails = () => {
   const { id } = useParams();
+  const navigate = useNavigate();
   const [quantity, setQuantity] = useState(1);
   const [selectedImage, setSelectedImage] = useState(0);
   const [activeTab, setActiveTab] = useState<'details' | 'ingredients' | 'how-to-use'>('details');
-  const [isWishlisted, setIsWishlisted] = useState(false);
+  // const [isWishlisted, setIsWishlisted] = useState(false);
 
   // Find product by id, or use first product as fallback
   const product = products.find(p => p.id === id) || products[0];
+
+  const handleBuyNow = () => {
+    navigate('/checkout');
+  };
 
   return (
     <div className="min-h-screen bg-background">
@@ -137,40 +142,15 @@ const ProductDetails = () => {
 
             <p className="mt-2 text-sm text-muted-foreground">{product.size}</p>
 
-            {/* Quantity & Add to Cart */}
-            <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-              <div className="flex items-center gap-3 rounded-xl border border-border p-1">
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  className="h-10 w-10"
-                  onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                >
-                  <Minus className="h-4 w-4" />
-                </Button>
-                <span className="w-8 text-center text-lg font-medium">{quantity}</span>
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  className="h-10 w-10"
-                  onClick={() => setQuantity(quantity + 1)}
-                >
-                  <Plus className="h-4 w-4" />
-                </Button>
-              </div>
-              
-              <Button variant="hero" className="flex-1 gap-2 text-base">
-                <ShoppingCart className="h-5 w-5" />
-                Add to Cart - ${(product.price * quantity).toFixed(2)}
-              </Button>
-
-              <Button
-                variant={isWishlisted ? "default" : "outline"}
-                size="icon"
-                className={`h-12 w-12 shrink-0 ${isWishlisted ? 'bg-destructive hover:bg-destructive/90' : ''}`}
-                onClick={() => setIsWishlisted(!isWishlisted)}
+            {/* Buy Button */}
+            <div className="mt-8">
+              <Button 
+                variant="hero" 
+                className="w-full gap-2 text-base py-6"
+                onClick={handleBuyNow}
               >
-                <Heart className={`h-5 w-5 ${isWishlisted ? 'fill-current' : ''}`} />
+                <ShoppingCart className="h-5 w-5" />
+                Buy Now - ${(product.price * quantity).toFixed(2)}
               </Button>
             </div>
 
@@ -273,7 +253,9 @@ const ProductDetails = () => {
         </section>
       </main>
 
-      <Footer />
+      <div className="mt-[50px]">
+        <Footer />
+      </div>
     </div>
   );
 };

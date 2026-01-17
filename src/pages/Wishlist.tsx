@@ -115,7 +115,7 @@ const Wishlist = () => {
                       </div>
                     )}
 
-                    <button 
+                    {/* <button 
                       onClick={(e) => {
                         e.preventDefault();
                         removeItem(item.id);
@@ -123,7 +123,7 @@ const Wishlist = () => {
                       className="absolute right-3 top-3 flex h-9 w-9 items-center justify-center rounded-full bg-destructive/90 backdrop-blur-sm transition-all duration-300 hover:bg-destructive hover:scale-110"
                     >
                       <Trash2 className="h-4 w-4 text-destructive-foreground" />
-                    </button>
+                    </button> */}
                   </div>
                 </Link>
 
@@ -161,7 +161,7 @@ const Wishlist = () => {
                         </span>
                       )}
                     </div>
-                    <Button 
+                    {/* <Button 
                       variant="premium" 
                       size="sm" 
                       className="gap-1"
@@ -169,7 +169,7 @@ const Wishlist = () => {
                     >
                       <ShoppingCart className="h-3 w-3" />
                       Add
-                    </Button>
+                    </Button> */}
                   </div>
                 </div>
               </div>
@@ -178,7 +178,9 @@ const Wishlist = () => {
         )}
       </main>
 
-      <Footer />
+      <div className="mt-[50px]">
+        <Footer />
+      </div>
     </div>
   );
 };

@@ -137,7 +137,9 @@ const Profile = () => {
         </div>
       </main>
 
-      <Footer />
+      <div className="mt-[50px]">
+        <Footer />
+      </div>
     </div>
   );
 };

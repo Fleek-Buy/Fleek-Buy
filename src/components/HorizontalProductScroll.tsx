@@ -162,17 +162,17 @@ const HorizontalProductScroll: React.FC = () => {
                   )}
                   
                   {/* Wishlist Button */}
-                  <button className="absolute top-3 right-3 p-2 bg-white/90 backdrop-blur-sm rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-white hover:scale-110">
+                  {/* <button className="absolute top-3 right-3 p-2 bg-white/90 backdrop-blur-sm rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-white hover:scale-110">
                     <Heart className="w-4 h-4 text-foreground" />
-                  </button>
+                  </button> */}
                   
                   {/* Quick Add Button */}
-                  <div className="absolute bottom-3 left-3 right-3 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                  {/* <div className="absolute bottom-3 left-3 right-3 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
                     <Button className="w-full bg-white/95 backdrop-blur-sm text-foreground hover:bg-white gap-2">
                       <ShoppingBag className="w-4 h-4" />
                       Quick Add
                     </Button>
-                  </div>
+                  </div> */}
                 </div>
 
                 {/* Content */}

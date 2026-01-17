@@ -214,7 +214,9 @@ const Cart = () => {
         )}
       </main>
 
-      <Footer />
+      <div className="mt-[50px]">
+        <Footer />
+      </div>
     </div>
   );
 };

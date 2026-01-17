@@ -119,14 +119,14 @@ const ProductCard = ({ product }: { product: (typeof newProducts)[0] }) => {
           </span>
         )}
 
-        <button
+        {/* <button
           onClick={(e) => e.preventDefault()}
           className="absolute right-3 top-3 flex h-9 w-9 items-center justify-center rounded-full bg-background/80 backdrop-blur-sm transition-all duration-300 hover:bg-background hover:scale-110"
         >
           <Heart className="h-4 w-4 text-foreground" />
-        </button>
+        </button> */}
 
-        <div className="absolute inset-x-0 bottom-0 flex translate-y-full items-center justify-center bg-gradient-to-t from-background/90 to-transparent p-4 transition-transform duration-300 group-hover:translate-y-0">
+        {/* <div className="absolute inset-x-0 bottom-0 flex translate-y-full items-center justify-center bg-gradient-to-t from-background/90 to-transparent p-4 transition-transform duration-300 group-hover:translate-y-0">
           <Button
             variant="premium"
             className="w-full gap-2"
@@ -135,7 +135,7 @@ const ProductCard = ({ product }: { product: (typeof newProducts)[0] }) => {
             <ShoppingCart className="h-4 w-4" />
             Add to Cart
           </Button>
-        </div>
+        </div> */}
       </div>
 
       <div className="p-4">
@@ -245,7 +245,9 @@ const NewArrivals = () => {
         </div>
       </section>
 
-      <Footer />
+      <div className="mt-[50px]">
+        <Footer />
+      </div>
     </div>
   );
 };
