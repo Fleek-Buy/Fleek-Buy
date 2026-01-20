@@ -4,13 +4,12 @@ const platforms = [
   { name: "Amazon", href: "#" },
   { name: "Flipkart", href: "#" },
   { name: "Meesho", href: "#" },
-  { name: "Myntra", href: "#" },
-  { name: "Nykaa", href: "#" },
+  { name: "Myntra", href: "#" }
 ];
 
 const AvailablePlatforms = () => {
   return (
-    <section className="py-12 bg-muted/30">
+    <section className="py-12 bg-muted/30 mb-12">
       <div className="container px-4 md:px-6">
         <div className="flex flex-col items-center gap-6">
           <h3 className="text-lg font-semibold text-muted-foreground uppercase tracking-wider">
