@@ -95,7 +95,7 @@ const Footer = () => {
 
           {/* Center Column - Logo */}
           <div className="flex flex-col items-center justify-center text-center">
-            <img src={logo} alt="Fleek Buy" className="h-[80px] w-auto mb-3" />
+            <img src={logo} alt="Fleek Buy" className="h-[180px] w-auto mb-3" />
             <p className="text-sm font-medium tracking-wider uppercase text-primary-foreground/80">
               Shop Smart, Live Better!
             </p>
