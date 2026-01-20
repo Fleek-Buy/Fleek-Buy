@@ -1,4 +1,4 @@
-import { ShoppingCart, Search, User, Menu, Heart } from "lucide-react";
+import { Search, Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import { Link } from "react-router-dom";
@@ -18,10 +18,16 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-6">
-            <Link to="/new-arrivals" className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary">
+            <Link
+              to="/new-arrivals"
+              className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
+            >
               New Arrivals
             </Link>
-            <Link to="/sale" className="flex items-center gap-1 text-sm font-medium text-secondary transition-colors hover:text-secondary/80">
+            <Link
+              to="/sale"
+              className="flex items-center gap-1 text-sm font-medium text-secondary transition-colors hover:text-secondary/80"
+            >
               <span className="relative">
                 Sale
                 <span className="absolute -right-3 -top-1 flex h-4 w-4 items-center justify-center rounded-full bg-accent text-[10px] font-bold text-accent-foreground">
@@ -29,7 +35,10 @@ const Header = () => {
                 </span>
               </span>
             </Link>
-            <Link to="/products" className="flex items-center gap-1 text-sm font-medium text-secondary transition-colors hover:text-secondary/80">
+            <Link
+              to="/products"
+              className="flex items-center gap-1 text-sm font-medium text-secondary transition-colors hover:text-secondary/80"
+            >
               All Products
             </Link>
           </nav>
@@ -89,13 +98,25 @@ const Header = () => {
       {isMenuOpen && (
         <div className="lg:hidden border-t border-border animate-fade-in">
           <nav className="container flex flex-col gap-2 px-4 py-4">
-            <Link to="/new-arrivals" className="rounded-lg px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-muted" onClick={() => setIsMenuOpen(false)}>
+            <Link
+              to="/new-arrivals"
+              className="rounded-lg px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-muted"
+              onClick={() => setIsMenuOpen(false)}
+            >
               New Arrivals
             </Link>
-            <Link to="/sale" className="rounded-lg px-4 py-2 text-sm font-medium text-secondary transition-colors hover:bg-secondary-light" onClick={() => setIsMenuOpen(false)}>
+            <Link
+              to="/sale"
+              className="rounded-lg px-4 py-2 text-sm font-medium text-secondary transition-colors hover:bg-secondary-light"
+              onClick={() => setIsMenuOpen(false)}
+            >
               Sale
             </Link>
-             <Link to="/products" className="rounded-lg px-4 py-2 text-sm font-medium text-secondary transition-colors hover:bg-secondary-light" onClick={() => setIsMenuOpen(false)}>
+            <Link
+              to="/products"
+              className="rounded-lg px-4 py-2 text-sm font-medium text-secondary transition-colors hover:bg-secondary-light"
+              onClick={() => setIsMenuOpen(false)}
+            >
               All Products
             </Link>
           </nav>
