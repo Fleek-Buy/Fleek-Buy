@@ -1,10 +1,13 @@
 import { ExternalLink } from "lucide-react";
+import amazonLogo from "./assets/amazon.png";
+import flipkartLogo from "./assets/flipkart.png";
+import meeshoLogo from "./assets/messho.png";
 
 const platforms = [
-  { name: "Amazon", href: "#" },
-  { name: "Flipkart", href: "#" },
-  { name: "Meesho", href: "#" },
-  { name: "Myntra", href: "#" }
+  { name: "Amazon", href: "#", logo: amazonLogo },
+  { name: "Flipkart", href: "#", logo: flipkartLogo },
+  { name: "Meesho", href: "#", logo: meeshoLogo },
+  { name: "Myntra", href: "#", logo: null },
 ];
 
 const AvailablePlatforms = () => {
@@ -15,17 +18,27 @@ const AvailablePlatforms = () => {
           <h3 className="text-lg font-semibold text-muted-foreground uppercase tracking-wider">
             Also Available At
           </h3>
-          <div className="flex flex-wrap justify-center items-center gap-6 md:gap-10">
+          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
             {platforms.map((platform) => (
               <a
                 key={platform.name}
                 href={platform.href}
-                className="group flex items-center gap-2 px-6 py-3 rounded-xl bg-background border border-border hover:border-primary/50 hover:shadow-md transition-all duration-300"
+                className="group flex items-center justify-center transition-all duration-300"
               >
-                <span className="text-lg font-bold text-foreground group-hover:text-primary transition-colors">
-                  {platform.name}
-                </span>
-                <ExternalLink className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors" />
+                {platform.logo ? (
+                  <img
+                    src={platform.logo}
+                    alt={platform.name}
+                    className="h-24 md:h-32 object-contain hover:scale-110 transition-transform"
+                  />
+                ) : (
+                  <>
+                    <span className="text-lg font-bold text-foreground group-hover:text-primary transition-colors">
+                      {platform.name}
+                    </span>
+                    <ExternalLink className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors ml-2" />
+                  </>
+                )}
               </a>
             ))}
           </div>

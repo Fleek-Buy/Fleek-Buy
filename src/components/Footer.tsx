@@ -1,12 +1,6 @@
-import {
-  Instagram,
-  Facebook,
-  Youtube,
-  Heart,
-  Mail,
-  Phone,
-} from "lucide-react";
+import { Instagram, Facebook, Youtube, Heart, Mail, Phone } from "lucide-react";
 import logo from "/FullLogo.png";
+import paymentImage from "./assets/paymentnew_700x.webp";
 
 const footerLinks = [
   { label: "About Us", href: "#" },
@@ -23,18 +17,6 @@ const socialLinks = [
   { icon: Instagram, href: "#", label: "Instagram" },
   { icon: Facebook, href: "#", label: "Facebook" },
   { icon: Youtube, href: "#", label: "YouTube" },
-];
-
-const paymentMethods = [
-  "AMEX",
-  "Diners",
-  "Fiserv",
-  "GPay",
-  "Maestro",
-  "Mastercard",
-  "Paytm",
-  "RuPay",
-  "Visa",
 ];
 
 const Footer = () => {
@@ -140,15 +122,12 @@ const Footer = () => {
           </div>
 
           {/* Payment Methods */}
-          <div className="flex flex-wrap justify-center gap-3">
-            {paymentMethods.map((method) => (
-              <div
-                key={method}
-                className="px-3 py-1.5 bg-primary-foreground/10 rounded text-xs font-semibold text-primary-foreground/90"
-              >
-                {method}
-              </div>
-            ))}
+          <div className="flex justify-center items-center">
+            <img
+              src={paymentImage}
+              alt="Payment Methods"
+              className="h-auto max-w-full"
+            />
           </div>
         </div>
       </div>
