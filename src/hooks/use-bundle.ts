@@ -8,7 +8,7 @@ export interface BundleItem {
   image: string;
 }
 
-const BUNDLE_STORAGE_KEY = "aura_luxe_bundle";
+const BUNDLE_STORAGE_KEY = "Fleek_buy_bundle";
 
 export const useBundle = () => {
   const [bundleItems, setBundleItems] = useState<BundleItem[]>([]);

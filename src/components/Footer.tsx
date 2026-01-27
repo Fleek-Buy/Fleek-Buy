@@ -1,16 +1,17 @@
 import { Instagram, Facebook, Youtube, Heart, Mail, Phone } from "lucide-react";
+import { Link } from "react-router-dom";
 import logo from "/FullLogo.png";
 import paymentImage from "./assets/paymentnew_700x.webp";
 
 const footerLinks = [
-  { label: "About Us", href: "#" },
-  { label: "We Are Eco-friendly", href: "#" },
-  { label: "We Care", href: "#" },
-  { label: "Blog", href: "#" },
-  { label: "FAQs", href: "#" },
-  { label: "Contact Us", href: "#" },
-  { label: "Shipping Policy", href: "#" },
-  { label: "Refund Policy", href: "#" },
+  { label: "About Us", to: "/about" },
+  { label: "We Are Eco-friendly", to: "/eco-friendly" },
+  { label: "We Care", to: "/we-care" },
+  { label: "Blog", to: "/blog" },
+  { label: "FAQs", to: "/faqs" },
+  { label: "Contact Us", to: "/contact" },
+  { label: "Shipping-Policy", to: "/shipping-policy" },
+  { label: "Refund-Policy", to: "/refund-policy" },
 ];
 
 const socialLinks = [
@@ -21,7 +22,7 @@ const socialLinks = [
 
 const Footer = () => {
   return (
-    <footer className="relative bg-primary text-primary-foreground">
+    <footer className="relative bg-primary text-primary-foreground mt-20">
       {/* Wave SVG Divider - matching the reference style */}
       <div className="absolute top-0 left-0 right-0 -translate-y-[99%] overflow-hidden">
         <svg
@@ -86,13 +87,13 @@ const Footer = () => {
           {/* Right Column - Navigation Links */}
           <div className="flex flex-col items-start md:items-end gap-3">
             {footerLinks.map((link) => (
-              <a
+              <Link
                 key={link.label}
-                href={link.href}
+                to={link.to}
                 className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors"
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
           </div>
         </div>

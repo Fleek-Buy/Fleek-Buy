@@ -109,7 +109,7 @@ const BundleSelection = () => {
     });
 
     // Get existing bundle from localStorage
-    const BUNDLE_STORAGE_KEY = "aura_luxe_bundle";
+    const BUNDLE_STORAGE_KEY = "Fleek_buy_bundle";
     interface BundleItemType {
       id: number;
       name: string;
